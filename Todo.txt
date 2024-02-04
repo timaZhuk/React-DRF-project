@@ -1,0 +1,73 @@
+1-- pip install django-cors-headers
+2-- pip install djangorestframework 
+3--django-admin startproject c(inside ReacDj)
+4--cd  backend 
+5--ls
+6--python manage.py startapp user_api 
+add in settings.py 
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+]
+--add to INSTALLED APPS
+'rest_framework',
+    'corsheaders',
+    'user_api.apps.UserApiConfig',
+
+7-- add
+in settings Interaction with REACT
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+]
+CORS_ALLOW_CREDENTIALS = True
+8--Questions!!!!
+email = self.normalize_email(email)
+        user = self.model(email=email)
+        user.set_password(password)
+        user.save()
+9---Craete AppUserManager class
+AppUser 
+10 -end points of API 
+11- serializers
+12 create views (using serializers and validation)
+13 add to settings AUTH_USER_MODEL = 'user_api.AppUser'
+and rest_framework variables
+REST_FRAMEWORK={
+    'DEFAULT_PERMISSION_CLASSES':(
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.SessionAuthentication'
+    ),
+
+}
+
+14 Login, Registration
+
+{
+"email":"tima90zhuk@gmail.com",
+"password":"17041990dfg"
+}'
+
+
+{
+"email":"timazhuk@gmail.com",
+"username":"Timur"
+"password":"17041990dfg"
+}
+
+{
+    "password": "17041990dfg",
+    "last_login": null,
+    "email": "timazhuk@gmail.com",
+    "username": "Timur"
+}
+15  npx create-react-app frontend
+
+16 cd frontend 
+npm start 
+npm install axios 
+npm install react-bootstrap bootstrap 
+
+
+
